@@ -4,20 +4,19 @@
 
 **Tabla de contenidos**
 
-[TOC]
+- Variables y mutabilidad
+- Tipos de datos
+- Ciclos
+- Funciones
+    - Closures
+- Manejo de memoria
+- Tipos de datos avanzados
+    - Arreglos - Vectores -Tuplas
+    - Slice
+    - Estructuras
+    - Enums
 
-#Variables y mutabilidad
-#Tipos de datos
-#Ciclos
-#Funciones
-##Closures
-#Manejo de memoria
-#Tipos de datos avanzados
-##Arreglos - Vectores -Tuplas
-##Slice
-##Estructuras
-##Enums
-#Instalación
+# Instalación
 
 En este semillero por facilidad y debido a todas las características que nos ofrece Linux decidimos utilizarlo como sistema operativo principal por lo que, la siguiente instalación del lenguaje de programación Rust requiere dicho sistema.
 
