@@ -16,7 +16,7 @@ fn main() {
 
     //Constantes son siempre inmutables
 
-    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+    const _THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
     //Shadowing
 
