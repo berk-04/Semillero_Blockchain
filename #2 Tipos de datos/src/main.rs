@@ -1,4 +1,7 @@
+#[allow(unused_variables)]
+
 fn main() {
+
     //Scalar Types
     //integers, floating-point numbers, Booleans, and characters
 
@@ -13,8 +16,6 @@ fn main() {
 
     //Signed -> -(2^(n-1)) to 2^(n-1) - 1
     //Unsigned -> 0 to 2^n - 1
-
-    //integers literals
 
     //Compound Types
 
