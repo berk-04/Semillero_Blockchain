@@ -4,10 +4,10 @@ use std::io::{self, Read};
 use std::fs;
 
 
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
-}
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
 
 
 // fn read_username_from_file() -> Result<String, io::Error> {
@@ -45,9 +45,9 @@ fn read_username_from_file() -> Result<String, io::Error> {
 // }
 
 //other way
-fn read_username_from_file() -> Result<String, io::Error> {
-    fs::read_to_string("hello.txt")
-}
+// fn read_username_from_file() -> Result<String, io::Error> {
+//     fs::read_to_string("hello.txt")
+// }
 
 
 // fn open_file() -> Result<(), Error> {
@@ -55,10 +55,10 @@ fn read_username_from_file() -> Result<String, io::Error> {
 //     Ok(())
 // }
 
-fn open_file() -> Result<(), Error> {
-    let file = File::open("hello.txt")?;
-    Ok(())
-}
+// fn open_file() -> Result<(), Error> {
+//     let file = File::open("hello.txt")?;
+//     Ok(())
+// }
 
 fn main() {
     
@@ -79,30 +79,27 @@ fn main() {
 
     //panic backtrace
 
-    let v = vec![1, 2, 3];
+    // let v = vec![1, 2, 3];
 
-    v[99]; //index out of bounds
-
-
-
+    // v[99]; //index out of bounds
 
 
     //Recoverable Errors with Result
 
     // let greeting_file_result = File::open("hello.txt");
 
-    // let greeting_file = match greeting_file_result {
-    //     Ok(file) => file,
-    //     Err(error) => match error.kind() {
-    //         ErrorKind::NotFound => match File::create("hello.txt") {
-    //             Ok(fc) => fc,
-    //             Err(e) => panic!("Problem creating the file: {:?}", e),
-    //         },
-    //         other_error => {
-    //             panic!("Problem opening the file: {:?}", other_error);
-    //         }
-    //     },
-    // };
+    let greeting_file = match greeting_file_result {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file: {:?}", e),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error);
+            }
+        },
+    };
     
 
     //Result<T,E> with unwrap and expect
@@ -126,6 +123,14 @@ fn main() {
     //The ? placed after a Result value is defined to work in almost the same way as the
     //match expressions we defined to handle the Result values above.
 
+    match read_username_from_file() {
+        Ok(username) => println!("Username: {}", username),
+        Err(e) => panic!("Problem opening the file: {:?}", e),
+    }
+    
 
 
 }
+
+
+
